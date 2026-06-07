@@ -33,7 +33,7 @@ export default async function getListings(
     }
 
     if (category) {
-      query.category = category;
+      if (typeof category === 'string' && category.length > 0) { query.category = category; }
     }
 
     if (roomCount) {

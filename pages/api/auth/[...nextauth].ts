@@ -11,7 +11,7 @@ export const authOptions: AuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
     GithubProvider({
-      clientId: process.env.GITHUB_ID as string,
+      clientId: process.env.GITHUB_ID ? process.env.GITHUB_ID as string : throw new Error('GITHUB_ID is not defined'),
       clientSecret: process.env.GITHUB_SECRET as string
     }),
     GoogleProvider({
