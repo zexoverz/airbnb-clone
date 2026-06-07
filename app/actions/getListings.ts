@@ -33,7 +33,7 @@ export default async function getListings(
     }
 
     if (category) {
-      query.category = category;
+      query.category = sanitizeInput(category);
     }
 
     if (roomCount) {
